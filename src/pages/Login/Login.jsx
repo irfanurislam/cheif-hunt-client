@@ -1,30 +1,31 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from "react-router-dom";
+import { AuthContext } from '../../provider/AuthProvider';
 const Login = () => {
 
-    // const {signIn,googleSignin} = useContext(AuthContext)
-    // const [success,setSuccess] = useState('')
-    // const [error,setError] = useState('')
+    const {signIn} = useContext(AuthContext)
+    const [success,setSuccess] = useState('')
+    const [error,setError] = useState('')
   
-    //   const handleLogin = (event) =>{
-    //  event.preventDefault()
-    //  const form = event.target
-    //  const email = form.email.value
-    //  const password = form.password.value
-    //  setSuccess('')
-    //  setError('')
-    //   console.log(email,password)
-    //   signIn(email,password)
-    //   .then(result =>{
-    //     const login = result.user
-    //     console.log(login)
-    //     setSuccess('login sucessfully',login)
-    //     form.reset()
-    //   }).catch(error =>{
-    //     console.log(error)
-    //     setError(error)
-    //   })
-    //   }
+      const handleLogin = (event) =>{
+     event.preventDefault()
+     const form = event.target
+     const email = form.email.value
+     const password = form.password.value
+     setSuccess('')
+     setError('')
+      console.log(email,password)
+      signIn(email,password)
+      .then(result =>{
+        const login = result.user
+        console.log(login)
+        setSuccess('login sucessfully',login)
+        form.reset()
+      }).catch(error =>{
+        console.log(error)
+        setError(error)
+      })
+      }
   
     //   const handleGoogle = () =>{
     //     googleSignin()
@@ -52,8 +53,8 @@ const Login = () => {
           
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        {/* onSubmit={handleLogin} */}
-          <form  className="card-body">
+       
+          <form  onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -86,12 +87,12 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
-            
+            {<p className="text-green-500">{success}</p>}
+         {<p className="text-red-500">{error}</p>}
           </form>
           <Link to='/register'><button className="btn btn-link"> register to authmaster</button></Link>
          <button  className="btn btn-success"> google</button>
-         {/* {<p className="text-green-500">{success}</p>}
-         {<p className="text-red-500">{error}</p>} */}
+        
          {/* onClick={handleGoogle} */}
         </div>
       </div>
