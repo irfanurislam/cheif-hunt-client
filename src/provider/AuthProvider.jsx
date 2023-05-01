@@ -7,7 +7,7 @@ const auth = getAuth(app);
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
- const user = {displayname: 'irfan'};
+ const user = {displayName: 'irfan', photoUrl: 'https://i.ibb.co/YptMK7b/banner.png'};
 
  const createUser = (email,password) =>{
     return createUserWithEmailAndPassword(auth,email,password)
