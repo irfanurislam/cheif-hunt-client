@@ -94,16 +94,16 @@ const Navbar = () => {
                 <div
                   id="tooltip-dark"
                   role="tooltip"
-                  class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+                  className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
                 >
                   Tooltip 
-                  <div class="tooltip-arrow" data-popper-arrow></div>
+                  <div className="tooltip-arrow" data-popper-arrow></div>
                 </div>
               </div>
               <button onClick={handleLogut} className="btn btn-warning">Logout</button>
             </>
           ) : (
-            <Link to="/" className="btn btn_all  text-xs md:text-base">
+            <Link to="/login" className="btn btn_all  text-xs md:text-base">
               Login
             </Link>
           )}
