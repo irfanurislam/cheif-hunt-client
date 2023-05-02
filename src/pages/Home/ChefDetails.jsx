@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const ChefDetails = () => {
@@ -27,7 +28,7 @@ const ChefDetails = () => {
             <p className="my-4">Number of receips: {num_recipes} items</p>
             <p> Like: {likes}</p>
             <p className="my-4"> Exprience: {years_of_experience} year</p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn btn-warning">Get Started</button>
           </div>
         </div>
       </div>
@@ -53,7 +54,10 @@ const ChefDetails = () => {
         <td className="whitespace-pre-wrap border px-4 py-2 font-normal ">{recipe.cooking_method}</td>
         <td className="border px-4 py-2 font-normal">{recipe.rating}</td>
         <td className="border px-4 py-2">
-          <button onClick={() => alert("This is my favorite!")} className="btn btn-warning">Favourite</button>
+          <button onClick={() => {
+                toast("This is my favorite!");
+                event.target.disabled = true;
+              }} className="btn btn-warning">Favourite</button>
         </td>
       </tr>
     ))}
