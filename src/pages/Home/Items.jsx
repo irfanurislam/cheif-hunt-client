@@ -41,7 +41,8 @@ const Items = () => {
   ];
 
   return (
-    <div className="my-12">
+    <div className="my-28">
+        <h2 className="text-xl my-20 text-center">Our Items Best DIshers</h2>
       <div className="grid grid-cols-2 md:grid-cols-3   gap-4">
       {photos.map((photo) => (
         <div
