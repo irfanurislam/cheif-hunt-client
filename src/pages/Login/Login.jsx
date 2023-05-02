@@ -1,44 +1,41 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../provider/AuthProvider';
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext)
-    const [success,setSuccess] = useState('')
-    const [error,setError] = useState('')
+    const {signIn,signInWithGoogle} = useContext(AuthContext)
+   
   
       const handleLogin = (event) =>{
      event.preventDefault()
      const form = event.target
      const email = form.email.value
      const password = form.password.value
-     setSuccess('')
-     setError('')
+     
+    
       console.log(email,password)
       signIn(email,password)
       .then(result =>{
-        const login = result.user
+        const login = result?.user
         console.log(login)
-        setSuccess('login sucessfully',login)
         form.reset()
       }).catch(error =>{
         console.log(error)
-        setError(error)
+        
       })
       }
   
-    //   const handleGoogle = () =>{
-    //     googleSignin()
-    //     .then(result =>{
-    //       const googleLog = result.user
-    //       console.log(googleLog)
-    //       setSuccess('succesfullu done')
-    //       setError('')
-    //     }).catch(error =>{
-    //       console.log(error)
-    //       setError(error)
-    //     })
-    //   }
+      const handleGoogle = () =>{
+        signInWithGoogle()
+        .then(result =>{
+          const googleLog = result?.user
+          console.log(googleLog)  
+        })
+        .catch(error =>{
+          console.log(error)
+          
+        })
+      }
   
   
 
@@ -87,16 +84,16 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
-            {<p className="text-green-500">{success}</p>}
-         {<p className="text-red-500">{error}</p>}
           </form>
           <Link to='/register'><button className="btn btn-link"> register to authmaster</button></Link>
-         <button  className="btn btn-success"> google</button>
+         <button onClick={handleGoogle} className="btn btn-success"> google</button>
         
-         {/* onClick={handleGoogle} */}
+        
         </div>
       </div>
     </div>
+
+    
     );
 };
 

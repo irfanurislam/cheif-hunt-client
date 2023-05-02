@@ -3,7 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user,logOut } = useContext(AuthContext);
+  const handleLogut = () =>{
+    logOut()
+    .then(() =>{
+      console.log('logout successfull')
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
 
   return (
     <nav className="md:px-12">
@@ -81,7 +90,7 @@ const Navbar = () => {
             <>
               
               <div className="w-14 rounded-full ">
-                <img src={user?.photoUrl} data-tooltip-target="tooltip-light" />
+                <img src={user?.photoURL} data-tooltip-target="tooltip-light" />
                 <div
                   id="tooltip-dark"
                   role="tooltip"
@@ -91,10 +100,10 @@ const Navbar = () => {
                   <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
               </div>
-              <button className="btn btn-warning">Logout</button>
+              <button onClick={handleLogut} className="btn btn-warning">Logout</button>
             </>
           ) : (
-            <Link to="/login" className="btn btn_all  text-xs md:text-base">
+            <Link to="/" className="btn btn_all  text-xs md:text-base">
               Login
             </Link>
           )}
