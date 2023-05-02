@@ -14,7 +14,7 @@ const Chef = ({ chef }) => {
       <div className="card w-72 bg-base-100 shadow-xl border border-yellow-400">
         <figure>
           <img
-            src="https://i.ibb.co/cbQqNxY/OIP.jpg"
+            src={picture_url}
             alt="chef"
           />
         </figure>
@@ -24,7 +24,7 @@ const Chef = ({ chef }) => {
           <p>Receipe Total{num_recipes}</p>
           <p>Likes {likes}</p>
           <div className="card-actions justify-end">
-          <Link to={`chefs/${id}`}><button className="btn btn-warning">View Details</button></Link>
+          <Link to={`chefs/${id}`}><button className="btn btn-warning">View Recipes</button></Link>
           </div>
         </div>
       </div>
