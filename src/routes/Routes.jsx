@@ -5,6 +5,8 @@ import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Chefs from "../pages/Home/Chefs";
+import ChefDetails from "../pages/Home/ChefDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -26,11 +28,11 @@ const router = createBrowserRouter([
                 path:'register',
                 element: <Register></Register>
             },
-            // {
-            //     path:'/chefs',
-            //     element:<Chefs></Chefs>,
-            //     loader: () => fetch('http://localhost:5000/chefs')
-            // }
+            {
+                path:'/chefs/:id',
+                element:<PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+            }
         ]
     }
 ])

@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="py-32">
           <div className="grid lg:grid-cols-5 md:grid-cols-3  gap-4">
             <div className="">
-                <h2 className='mb-4 text-3xl font-extrabold'>KnowldegeCheife</h2>
+                <h2 className='mb-4 text-3xl font-extrabold'>delizios</h2>
                 <p className='mb-4 text-base leading-7'>There are many Jobs In the Site you Have apply frequently,daily updating,worldwide jobs </p>
              <p>
             

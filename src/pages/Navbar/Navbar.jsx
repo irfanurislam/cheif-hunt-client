@@ -3,16 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
-  const { user,logOut } = useContext(AuthContext);
-  const handleLogut = () =>{
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogut = () => {
     logOut()
-    .then(() =>{
-      console.log('logout successfull')
-    })
-    .catch(error =>{
-      console.log(error)
-    })
-  }
+      .then(() => {
+        console.log("logout successfull");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <nav className="md:px-12">
@@ -42,9 +42,6 @@ const Navbar = () => {
               <Link className="mb-3" to="/">
                 Home
               </Link>
-              <Link className="mb-3" to="/statistics">
-                Statistics
-              </Link>
               <Link className="mb-3" to="/applyjob">
                 Applied Jobs
               </Link>
@@ -53,8 +50,8 @@ const Navbar = () => {
               </Link>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case font-bold text-base md:text-2xl text-[#1A1919]">
-            KnowledgeCheif
+          <a className="btn btn-ghost normal-case font-bold text-base md:text-2xl text-warning">
+            Deliziosa 
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -64,12 +61,6 @@ const Navbar = () => {
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Home
-            </NavLink>
-            <NavLink
-              to="/statistics"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Statistics
             </NavLink>
             <NavLink
               to="/register"
@@ -88,7 +79,6 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              
               <div className="w-14 rounded-full ">
                 <img src={user?.photoURL} data-tooltip-target="tooltip-light" />
                 <div
@@ -96,11 +86,13 @@ const Navbar = () => {
                   role="tooltip"
                   className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
                 >
-                  Tooltip 
+                  Tooltip
                   <div className="tooltip-arrow" data-popper-arrow></div>
                 </div>
               </div>
-              <button onClick={handleLogut} className="btn btn-warning">Logout</button>
+              <button onClick={handleLogut} className="btn btn-warning">
+                Logout
+              </button>
             </>
           ) : (
             <Link to="/login" className="btn btn_all  text-xs md:text-base">
