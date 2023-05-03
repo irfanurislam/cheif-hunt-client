@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../provider/AuthProvider';
 const Login = () => {
 
-    const {signIn,signInWithGoogle} = useContext(AuthContext)
+    const {signIn,signInWithGoogle,githubSignin} = useContext(AuthContext)
    
   
       const handleLogin = (event) =>{
@@ -23,7 +23,7 @@ const Login = () => {
         console.log(error)
         
       })
-      }
+      };
   
       const handleGoogle = () =>{
         signInWithGoogle()
@@ -37,6 +37,15 @@ const Login = () => {
         })
       }
   
+      const handleGithubLogin = () =>{
+        githubSignin()
+        .then(result =>{
+          const loginGit = result.user;
+          console.log(loginGit)
+        }).catch(error =>{
+          console.log(error)
+        })
+      }
   
 
 
@@ -86,8 +95,9 @@ const Login = () => {
             </div>
           </form>
           <Link to='/register'><button className="btn btn-link"> register to authmaster</button></Link>
-         <button onClick={handleGoogle} className="btn btn-success"> google</button>
-        
+         <button onClick={handleGoogle} className="btn btn-outline"> google</button>
+         <br />
+         <button onClick={handleGithubLogin} className='btn btn-outline'> Github</button>
         
         </div>
       </div>

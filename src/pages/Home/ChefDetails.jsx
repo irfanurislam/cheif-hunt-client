@@ -4,9 +4,9 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 const ChefDetails = () => {
   const { id } = useParams();
-
-  const chefinfo = useLoaderData();
-  const [info, setInfo] = useState(chefinfo);
+  const info = useLoaderData();
+  // const chefinfo = useLoaderData();
+  // const [info, setInfo] = useState(chefinfo);
   console.log(info);
 
   const {recipes, chef_name,description, years_of_experience, likes, picture_url, num_recipes } =

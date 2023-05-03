@@ -19,7 +19,7 @@ const Blog = () => {
          </div>
          <div className="text-[#111111] my-5">
             <h2 className="text-2xl font-bold">2:How to validate React props using PropTypes?</h2>
-            <p className="text-lg mt-8"> Ans: </p>
+            <p className="text-lg mt-8"> Ans:  PropTypes is a type checking library that allows you to specify the type and shape of the props that are passed into a React component.</p>
          </div>
          <div className="text-[#111111] my-5">
             <h2 className="text-2xl font-bold">3: The difference between nodejs and express js.?</h2>
