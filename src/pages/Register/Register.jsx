@@ -4,6 +4,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [error,setError] = useState('')
+  const [success,setSuccess] = useState('')
   
 
   const handleregister = (event) => {
@@ -13,8 +15,10 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    if(password < 6){
-      return alert('password mustbe 6 character')
+    setError('')
+    setSuccess('')
+    if(password.length < 6){
+      return setError('password mustbe 6 character')
     }
    
     console.log(name, photo, email, password);
@@ -22,10 +26,14 @@ const Register = () => {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
-        updateUser(result?.user, name, photo);   
+        
+        updateUser(result?.user, name, photo); 
+        setSuccess('successfully login')  
+        form.reset()
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
+        setError(error.message)
         
       });
   };
@@ -37,9 +45,11 @@ const Register = () => {
     })
       .then(() => {
         console.log("user name updated");
+        setSuccess('name,photo updated')
       })
       .catch((error) => {
         console.log(error);
+        setError(error)
       });
   };
 
@@ -103,7 +113,12 @@ const Register = () => {
                   Forgot password?
                 </Link>
               </label>
+
             </div>
+            { <p className='text-error'>{error}</p>}
+            <br />
+            { <p className='text-success'>{success}</p>}
+            
             <div className="form-control mt-6">
               <button className="btn btn-primary">register</button>
             </div>

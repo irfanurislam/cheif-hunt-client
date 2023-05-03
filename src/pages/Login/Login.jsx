@@ -94,10 +94,10 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
-          <Link to='/register'><button className="btn btn-link"> register to authmaster</button></Link>
-         <button onClick={handleGoogle} className="btn btn-outline"> google</button>
+          <Link to='/register'> <small>Don't Have A Account? Please</small><button className="btn btn-link">Register </button></Link>
+         <button onClick={handleGoogle} className="btn btn-outline">Login google</button>
          <br />
-         <button onClick={handleGithubLogin} className='btn btn-outline'> Github</button>
+         <button onClick={handleGithubLogin} className='btn btn-outline'>Log in Github</button>
         
         </div>
       </div>
