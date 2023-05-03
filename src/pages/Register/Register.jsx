@@ -4,9 +4,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  const [error,setError] = useState('')
-  const [success,setSuccess] = useState('')
-  
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleregister = (event) => {
     event.preventDefault();
@@ -15,26 +14,25 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    setError('')
-    setSuccess('')
-    if(password.length < 6){
-      return setError('password mustbe 6 character')
+    setError("");
+    setSuccess("");
+     if (password.length < 6) {
+      return setError("password mustbe 6 character");
     }
-   
+
     console.log(name, photo, email, password);
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
-        
-        updateUser(result?.user, name, photo); 
-        setSuccess('successfully login')  
-        form.reset()
+
+        updateUser(result?.user, name, photo);
+        setSuccess("successfully login");
+        form.reset();
       })
       .catch((error) => {
         // console.log(error);
-        setError(error.message)
-        
+        setError(error.message);
       });
   };
 
@@ -45,11 +43,11 @@ const Register = () => {
     })
       .then(() => {
         console.log("user name updated");
-        setSuccess('name,photo updated')
+        setSuccess("name,photo updated");
       })
       .catch((error) => {
         console.log(error);
-        setError(error)
+        setError(error.message);
       });
   };
 
@@ -113,18 +111,20 @@ const Register = () => {
                   Forgot password?
                 </Link>
               </label>
-
             </div>
-            { <p className='text-error'>{error}</p>}
+            {<p className="text-error">{error}</p>}
             <br />
-            { <p className='text-success'>{success}</p>}
-            
+            {<p className="text-success">{success}</p>}
+
             <div className="form-control mt-6">
               <button className="btn btn-primary">register</button>
             </div>
 
             <p>
-              <small>already Have a account</small> <Link to="/">Login</Link>
+              <small>already Have a account</small>
+              <Link to="/login" className="btn btn-link">
+                Login
+              </Link>
             </p>
           </form>
         </div>

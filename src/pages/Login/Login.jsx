@@ -1,26 +1,30 @@
-import React, { useContext } from 'react';
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../provider/AuthProvider';
 const Login = () => {
-
+      const navigate = useNavigate()
     const {signIn,signInWithGoogle,githubSignin} = useContext(AuthContext)
-   
-  
+   const location = useLocation()
+    const [error,setError] = useState('')
+   const from = location.state?.from?.pathname || '/'
+
       const handleLogin = (event) =>{
      event.preventDefault()
      const form = event.target
      const email = form.email.value
      const password = form.password.value
      
-    
+     setError('')
       console.log(email,password)
       signIn(email,password)
       .then(result =>{
         const login = result?.user
         console.log(login)
         form.reset()
+        navigate(from, {replace: true})
       }).catch(error =>{
-        console.log(error)
+        console.log(error.message)
+        setError(error.message)
         
       })
       };
@@ -30,9 +34,11 @@ const Login = () => {
         .then(result =>{
           const googleLog = result?.user
           console.log(googleLog)  
+          navigate(from, {replace: true})
         })
         .catch(error =>{
           console.log(error)
+          setError(error.message)
           
         })
       }
@@ -42,8 +48,10 @@ const Login = () => {
         .then(result =>{
           const loginGit = result.user;
           console.log(loginGit)
+          navigate(from, {replace: true})
         }).catch(error =>{
           console.log(error)
+          setError(error.message)
         })
       }
   
@@ -93,11 +101,13 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
+            { <p className='text-error'>{error}</p>}
           </form>
-          <Link to='/register'> <small>Don't Have A Account? Please</small><button className="btn btn-link">Register </button></Link>
+          <Link to='/register' state={location.state}> <small>Don't Have A Account? Please</small><button className="btn btn-link">Register </button></Link>
+          <br />
          <button onClick={handleGoogle} className="btn btn-outline">Login google</button>
          <br />
-         <button onClick={handleGithubLogin} className='btn btn-outline'>Log in Github</button>
+         <button onClick={handleGithubLogin} className='btn btn-outline'>Login Github</button>
         
         </div>
       </div>
