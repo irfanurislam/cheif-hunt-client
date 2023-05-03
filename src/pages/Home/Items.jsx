@@ -42,7 +42,10 @@ const Items = () => {
 
   return (
     <div className="my-28">
-        <h2 className="text-xl my-20 text-center">Our Items Best DIshers</h2>
+        <div className="text-center mt-28 mb-14">
+        <h2 className="text-2xl font-medium mb-4">The Food Heaven</h2>
+        <p className="text-xl">Exprimentation in a kitchen and Focus on excellence are among our main driving forces in cooking </p>
+        </div>
       <div className="grid grid-cols-2 md:grid-cols-3   gap-4">
       {photos.map((photo) => (
         <div
