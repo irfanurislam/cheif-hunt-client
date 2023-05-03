@@ -1,11 +1,18 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser,logOut } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const navigate = useNavigate()
+//   const location = useLocation()
+  
+//  const from = location.state?.from?.pathname || '/'
+
+
 
   const handleregister = (event) => {
     event.preventDefault();
@@ -27,8 +34,11 @@ const Register = () => {
         console.log(createdUser);
 
         updateUser(result?.user, name, photo);
+        
         setSuccess("successfully login");
+        logOut()
         form.reset();
+        navigate('/login')
       })
       .catch((error) => {
         // console.log(error);
