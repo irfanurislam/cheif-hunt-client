@@ -1,11 +1,20 @@
 import React from 'react';
+import Pdf from "react-to-pdf";
 
+const ref = React.createRef();
 const Blog = () => {
 
    //question parts
     return (
         <div>
-           <div className="px-8">
+    <div className='text-center'>
+
+    
+     <Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <button onClick={toPdf} className='bg-blue-600'>Generate Pdf</button>}
+      </Pdf>
+</div>
+           <div ref={ref} className="px-8">
       <div className="mt-5 card border-none w-50 bg-base-100">
         <div className="card-body text-lg text-[#111111]">
          <div className="text-[#111111] my-5">
