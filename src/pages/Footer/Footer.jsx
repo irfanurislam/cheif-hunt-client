@@ -1,63 +1,42 @@
 import React from 'react';
 
-const Footer = () => {
-    return (
-        <footer className="bg-[#1A1919] text-white px-14 py-10">
-        <div className="py-32">
-          <div className="grid lg:grid-cols-5 md:grid-cols-3  gap-4">
-            <div className="">
-                <h2 className='mb-4 text-3xl font-extrabold'>delizios</h2>
-                <p className='mb-4 text-base leading-7'>There are many Jobs In the Site you Have apply frequently,daily updating,worldwide jobs </p>
-             <p>
-            
-             </p>
-            </div>
-            <div className="">
-            <h2 className='mb-4 text-xl font-bold'>Company</h2>
-            <div className='text-base'>
-            <p className='mb-4'>About</p>
-            <p className='mb-4'>Work</p>
-            <p className='mb-4'>Latest News</p>
-            <p className='mb-4'>Career</p>
-            </div>
-            </div>
-
-            <div className="">
-              <h2 className='mb-4 text-xl font-bold'>Product</h2>
-            <div className='text-base'>
-            <p className='mb-4'>Prototype</p>
-            <p className='mb-4'>Plans & Pricing</p>
-            <p className='mb-4'>Customers</p>
-            <p className='mb-4'>Integrations</p>
-            </div>
-            </div>
-            <div className="">
-            <h2 className='mb-4 text-xl font-bold'>Support</h2>
-            <div className='text-base'>
-            <p className='mb-4'>Help Desk</p>
-            <p className='mb-4'>Sales</p>
-            <p className='mb-4'>Become a Partner</p>
-            <p className='mb-4'>Developers</p>
-            </div>
-            </div>
-            <div className="">
-            <h2 className='mb-4 text-xl font-bold'>Contact</h2>
-            <div className='text-base'>
-            <p className='mb-4'>524 Broadway , Muradpur</p>
-            <p className='mb-4'>+1 777 - 978 - 5570</p>
-            
-            </div>
-            </div>
+function Footer() {
+  return (
+    <footer className="bg-gray-800 text-white py-6 px-10">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <h2 className="text-xl font-bold mb-2">About Delizios</h2>
+            <p className="text-gray-400">Delizios is a brand that brings together some of the world's most talented Italian chefs and their best recipes. Our mission is to create delicious meals that bring people together.</p>
           </div>
-          
+          <div>
+            <h2 className="text-xl font-bold mb-2">Our Italian Chefs</h2>
+            <ul>
+              <li className="mb-1">Antonio Rossi</li>
+              <li className="mb-1">Francesca Bianchi</li>
+              <li className="mb-1">Giovanni Ricci</li>
+              <li className="mb-1">Maria Greco</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold mb-2">Contact Us</h2>
+            <p className="text-gray-400">Via della Rosa 23<br />Rome, Italy 00186<br />info@delizios.it</p>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold mb-2">Follow Us</h2>
+            <ul>
+              <li className="mb-1"><a href="#">Facebook</a></li>
+              <li className="mb-1"><a href="#">Twitter</a></li>
+              <li className="mb-1"><a href="#">Instagram</a></li>
+            </ul>
+          </div>
         </div>
-        <hr className='mb-4 bg-fuchsia-200' />
-        <div className='flex justify-between text-base mb-12'>
-            <p>@2023 KnowldegeCheife. All Rights Reserved</p>
-            <p>Powered by FindJob</p>
+        <div className="mt-6 text-center">
+          <p className="text-gray-400">&copy; 2023 Delizios. All rights reserved.</p>
         </div>
-      </footer>
-    );
-};
+      </div>
+    </footer>
+  );
+}
 
 export default Footer;

@@ -11,7 +11,7 @@ const Chefs = () => {
     
     return (
         <div className='my-28 px-8'>
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {chefs.map(chef => <Chef
                 key={chef.id}
                 chef = {chef}
