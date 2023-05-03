@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { FaRegHeart, FaStar } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const ChefDetails = () => {
@@ -52,10 +53,10 @@ const ChefDetails = () => {
         <td className="border px-4 py-2 text-lg font-medium">{recipe.recipe_name}</td>
         <td className="border px-4 py-2 font-normal">{recipe.ingredients.join(", ")}</td>
         <td className="whitespace-pre-wrap border px-4 py-2 font-normal ">{recipe.cooking_method}</td>
-        <td className="border px-4 py-2 font-normal">{recipe.rating}</td>
+        <td className="border px-4 py-2 font-normal"><FaStar className="text-warning"></FaStar> {recipe.rating}</td>
         <td className="border px-4 py-2">
           <button onClick={() => {
-                toast("This is my favorite!");
+                toast("Favourite Items ❤️");
                 event.target.disabled = true;
               }} className="btn btn-warning">Favourite</button>
         </td>

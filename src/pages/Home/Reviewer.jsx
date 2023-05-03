@@ -1,12 +1,13 @@
 import React from "react";
 
+import { FaRegStar, FaRegStarHalf, FaStar, FaStarHalfAlt } from "react-icons/fa";
 const Reviewer = () => {
   const recipes = [
     {
       id: 1,
       title: "Spaghetti Bolognese",
       image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
-      rating: 4,
+      rating: 4.5,
       comment: "Delicious and easy to make!",
       topCommenter: "John",
     },
@@ -22,7 +23,7 @@ const Reviewer = () => {
       id: 3,
       title: "Chicken Alfredo",
       image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
-      rating: 3,
+      rating: 3.5,
       comment: "Decent recipe, but a bit too heavy for my taste.",
       topCommenter: "Mike",
     },
@@ -38,7 +39,7 @@ const Reviewer = () => {
       id: 5,
       title: "Mushroom Risotto",
       image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
-      rating: 4,
+      rating: 4.5,
       comment: "Great vegetarian option, easy to follow recipe.",
       topCommenter: "David",
     },
@@ -51,9 +52,37 @@ const Reviewer = () => {
       topCommenter: "Emily",
     },
   ];
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= Math.floor(rating); i++) {
+      stars.push(<FaStar key={i} className="text-yellow-400" />);
+    }
+    if (rating % 1 !== 0) {
+      stars.push(
+        <FaStarHalfAlt key={Math.ceil(rating)} className="text-yellow-400" />
+      );
+    }
+    for (let i = Math.ceil(rating) + 1; i <= 5; i++) {
+      stars.push(<FaStar key={i} className="text-gray-300" />);
+    }
+    return stars;
+  };
+  const topReviewer = recipes.reduce((acc, recipe) =>
+  recipe.comment.length > acc.comment.length ? recipe : acc
+);
+
+
+
+
+
   return (
     <div className="my-28">
-      <h2 className="text-xl text-center mb-20">Review Items Here </h2>
+       <div className="text-center">
+       <h2 className="text-2xl font-bold mb-8">
+        {recipes.length} Items | Top Reviewer: {topReviewer.topCommenter}
+      </h2>
+       </div>
       <div className="flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -109,19 +138,10 @@ const Reviewer = () => {
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="text-sm font-medium text-yellow-500">
-                            {recipe.rating}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-4 w-4 ml-1"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                            >
-                              <path fillRule="evenodd" d="" />
-                            </svg>
-                          </div>
-                        </div>
+                      <div className="flex items-center">
+                      {renderStars(recipe.rating)}
+                      {recipe.rating}
+                      </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm font-medium text-gray-900">
