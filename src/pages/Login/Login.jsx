@@ -103,7 +103,7 @@ const Login = () => {
             </div>
             { <p className='text-error'>{error}</p>}
           </form>
-          <Link to='/register' state={location.state}> <small>Don't Have A Account? Please</small><button className="btn btn-link">Register </button></Link>
+          <Link to='/register'> <small>Don't Have A Account? Please</small><button className="btn btn-link">Register </button></Link>
           <br />
          <button onClick={handleGoogle} className="btn btn-outline">Login google</button>
          <br />

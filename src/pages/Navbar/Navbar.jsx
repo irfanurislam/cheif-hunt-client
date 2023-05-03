@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
+
   const handleLogut = () => {
     logOut()
       .then(() => {
@@ -13,6 +15,8 @@ const Navbar = () => {
         console.log(error);
       });
   };
+
+
 
   return (
     <nav className="md:px-12">
@@ -79,23 +83,22 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div className="w-14 rounded-full ">
-                <img src={user?.photoURL} data-tooltip-target="tooltip-light" />
-                <div
-                  id="tooltip-dark"
-                  role="tooltip"
-                  className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
-                >
-                  Tooltip
-                  <div className="tooltip-arrow" data-popper-arrow></div>
-                </div>
+              {/* <div className="flex items-center"> */}
+              <div className="" title={user.displayName}>
+                <img className="w-16 rounded-full" src={user?.photoURL} alt="Profile"
+                
+                 />
+                {/* {user.displayName && <span className="absolute top-full left-1/2 transform -translate-x-1/2 font-medium  text-black  rounded-md opacity-0 transition-opacity duration-200 hover:opacity-100">{user.displayName}</span>} */}
               </div>
+
+              
+              {/* </div> */}
               <button onClick={handleLogut} className="btn btn-warning">
                 Logout
               </button>
             </>
           ) : (
-            <Link to="/login" className="btn btn_all  text-xs md:text-base">
+            <Link to="/login" className="btn btn-warning text-xs md:text-base">
               Login
             </Link>
           )}
