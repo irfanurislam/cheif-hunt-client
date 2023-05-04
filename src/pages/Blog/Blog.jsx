@@ -66,7 +66,7 @@ const Blog = () => {
         <Pdf targetRef={ref} filename="code-example.pdf">
           {({ toPdf }) => (
             <button onClick={toPdf} className="btn btn-outline btn-secondary">
-              <span className="flex items-center gap-2"><HiOutlineFolderDownload className="text-xl" />  Pdf Converter</span>
+              <span className="flex items-center gap-2 text-black"><HiOutlineFolderDownload className="text-xl" />  Pdf Converter</span>
             </button>
           )}
         </Pdf>

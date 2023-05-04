@@ -11,11 +11,11 @@ const Chef = ({ chef }) => {
 
   return (
     <div className="">
-      <div className="card w-full bg-base-100 shadow-xl border border-yellow-400">
-        <figure>
+      <div className="card min-h-full bg-base-100 shadow-xl border border-yellow-400">
+        <figure className="">
           <LazyLoad>
           <img
-          className="md:w-80 md:h-72 object-cover"
+          className=""
             src={picture_url}
             alt="chef"
           /></LazyLoad>

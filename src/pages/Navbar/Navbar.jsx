@@ -54,7 +54,7 @@ const Navbar = () => {
               </Link>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case font-bold text-base md:text-2xl text-warning">
+          <a className="btn btn-ghost normal-case font-bold text-xl md:text-2xl ">
             Deliziosa 
           </a>
         </div>
