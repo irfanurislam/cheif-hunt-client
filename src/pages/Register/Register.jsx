@@ -132,8 +132,8 @@ const Register = () => {
 
             <p>
               <small>already Have a account</small>
-              <Link to="/login" className="btn btn-link">
-                Login
+              <Link to="/login" className="link link-error ml-2 hover:text-blue-700">
+                 Login
               </Link>
             </p>
           </form>

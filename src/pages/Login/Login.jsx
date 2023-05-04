@@ -102,12 +102,20 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
             { <p className='text-error'>{error}</p>}
+
+            <div className='my-5'>
+          <Link to='/register'> <small>Don't Have A Account? Please</small><button className="link link-error ml-2 hover:text-blue-700">Register </button></Link>
+          </div>
           </form>
-          <Link to='/register'> <small>Don't Have A Account? Please</small><button className="btn btn-link">Register </button></Link>
-          <br />
-         <button onClick={handleGoogle} className="btn btn-outline">Login google</button>
-         <br />
-         <button onClick={handleGithubLogin} className='btn btn-outline'>Login Github</button>
+          
+          
+        <div className='mx-auto mb-4'>
+
+        <button onClick={handleGoogle} className="btn btn-outline w-40">Login google</button>
+         </div>
+         <div className='mx-auto mb-4'>
+         <button onClick={handleGithubLogin} className='btn btn-outline w-40 '>Login Github</button>
+       </div>
         
         </div>
       </div>
