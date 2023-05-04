@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { FaRegHeart, FaStar } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const ChefDetails = () => {
@@ -17,10 +18,12 @@ const ChefDetails = () => {
     <div className="px-8">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
+          <LazyLoad>
           <img
             src={picture_url}
             className="max-w-sm rounded-lg shadow-2xl"
           />
+          </LazyLoad>
           <div>
             <h1 className="text-5xl font-bold">{chef_name}</h1>
             <p className="py-6">
@@ -52,7 +55,9 @@ const ChefDetails = () => {
       <tr key={recipe.id}>
        <td className="border px-4 py-2">
             <div className="flex items-center w-full">
+             
               <img src={recipe.photo} alt={recipe.recipe_name} className="w-12 h-16 rounded-md mr-4" />
+              
               <span>{recipe.recipe_name}</span>
             </div>
           </td>

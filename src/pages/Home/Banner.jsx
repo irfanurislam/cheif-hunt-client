@@ -1,12 +1,15 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 
 const Banner = () => {
   return (
     <div className="my-10">
+      <LazyLoad>
       <div
         className="hero h-[36rem]"
         style={{
-           backgroundImage: `url("https://i.ibb.co/890tNZq/lily-banse-YHSwy6uqvk-unsplash.jpg")`,  
+           backgroundImage: `url("https://i.ibb.co/890tNZq/lily-banse-YHSwy6uqvk-unsplash.jpg")`,
+            
         }}
       >
         <div className="hero-overlay bg-opacity-70 "></div>
@@ -20,6 +23,8 @@ const Banner = () => {
           </div>
         </div>
       </div>
+      </LazyLoad>
+
     </div>
     // https://i.ibb.co/cbQqNxY/OIP.jpg
   );
