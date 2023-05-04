@@ -8,6 +8,9 @@ const ErrorPage = () => {
     <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
         {/* <ExclamationCircleIcon className='w-32 h-32 text-red-500' /> */}
+        <div className='flex items-center'>
+       <img className="max-w-xl" src='https://i.ibb.co/6DDkR6q/R.png' alt='error' />
+       </div>
         <div className="max-w-md text-center">
           <h2 className="mb-8 font-extrabold text-9xl text-red-500">
             <span className="sr-only">Error</span>

@@ -21,13 +21,15 @@ const Register = () => {
     const password = form.password.value;
     setError("");
     setSuccess("");
-      
-    if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(gmail)+(?:\.com)*$/.test(email)){
-      setError('please valid email ')
+
+    
+      if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(gmail)+(?:\.com)*$/.test(email)){
+      setError('please valid email')
       return
     }
-     if (password.length < 6) {
-     setError("password mustbe 6 character"); 
+    else if (password.length < 6) {
+     setError("password mustbe 6 character");
+
      return 
     } 
     
@@ -48,7 +50,7 @@ const Register = () => {
         navigate("/login");
       })
       .catch((error) => {
-        // console.log(error);
+         console.log(error.message);
         setError(error.message);
       });
   };
@@ -63,7 +65,7 @@ const Register = () => {
         setSuccess("name,photo updated");
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
         setError(error.message);
       });
   };

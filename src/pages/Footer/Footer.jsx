@@ -5,6 +5,7 @@ function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-6 px-10">
       <div className="container mx-auto">
+      
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
             <h2 className="text-xl font-bold mb-2">About Delizios</h2>
