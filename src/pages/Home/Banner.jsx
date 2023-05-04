@@ -6,7 +6,7 @@ const Banner = () => {
       <div
         className="hero h-[36rem]"
         style={{
-           backgroundImage: `url("https://i.ibb.co/cbQqNxY/OIP.jpg")`,  
+           backgroundImage: `url("https://i.ibb.co/890tNZq/lily-banse-YHSwy6uqvk-unsplash.jpg")`,  
         }}
       >
         <div className="hero-overlay bg-opacity-70 "></div>
@@ -21,9 +21,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
-    // https://i.ibb.co/dtwZ55L/xxrxux1503070723.jpg
     // https://i.ibb.co/cbQqNxY/OIP.jpg
-    // https://i.ibb.co/94pV4pS/0jv5gx1661040802.jpg
   );
 };
 

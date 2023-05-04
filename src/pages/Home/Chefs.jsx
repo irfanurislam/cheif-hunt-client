@@ -10,7 +10,7 @@ const Chefs = () => {
 
     
     return (
-        <div className='my-28 px-8'>
+        <div className='my-28 '>
             <div className="text-center mt-28 mb-14">
         <h2 className="text-2xl font-bold mb-4">Our chefs</h2>
         <p className="text-xl">Food is not just fuel, it's information. It talks to your DNA and tells it what to do. </p>

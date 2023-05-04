@@ -15,6 +15,7 @@ const Chef = ({ chef }) => {
         <figure>
           <LazyLoad>
           <img
+          className="md:w-80 md:h-72 object-cover"
             src={picture_url}
             alt="chef"
           /></LazyLoad>

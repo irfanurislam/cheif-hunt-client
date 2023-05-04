@@ -14,7 +14,7 @@ const Reviewer = () => {
     {
       id: 2,
       title: "Beef Tacos",
-      image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
+      image: "https://i.ibb.co/dtwZ55L/xxrxux1503070723.jpg",
       rating: 5,
       comment: "Amazing recipe, highly recommend!",
       topCommenter: "Sarah",
@@ -22,22 +22,22 @@ const Reviewer = () => {
     {
       id: 3,
       title: "Chicken Alfredo",
-      image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
+      image: "https://i.ibb.co/cbQqNxY/OIP.jpg",
       rating: 3.5,
       comment: "Decent recipe, but a bit too heavy for my taste.",
       topCommenter: "Mike",
     },
     {
       id: 4,
-      title: "Salmon Teriyaki",
-      image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
+      title: "Squash linguine",
+      image: "https://i.ibb.co/94pV4pS/0jv5gx1661040802.jpg",
       rating: 4.5,
       comment: "Absolutely delicious, will definitely make again!",
       topCommenter: "Linda",
     },
     {
       id: 5,
-      title: "Mushroom Risotto",
+      title: "Spaghetti alla Carbonara",
       image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
       rating: 4.5,
       comment: "Great vegetarian option, easy to follow recipe.",
@@ -45,8 +45,8 @@ const Reviewer = () => {
     },
     {
       id: 6,
-      title: "Sushi Rolls",
-      image: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
+      title: "Spinach & Ricotta",
+      image: "https://i.ibb.co/cv7G4fc/uquqtu1511178042.jpg",
       rating: 5,
       comment: "The best sushi rolls I have ever tasted, hands down!",
       topCommenter: "Emily",
@@ -127,7 +127,7 @@ const Reviewer = () => {
                     <tr key={recipe.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <img
-                          className="h-10 w-10 rounded-full"
+                          className="h-12 w-12 rounded-full"
                           src={recipe.image}
                           alt={recipe.title}
                         />

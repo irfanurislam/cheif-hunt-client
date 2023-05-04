@@ -25,13 +25,13 @@ const Items = () => {
       id: 4,
       rating: 5,
       name: "Spinach & Ricotta",
-      url: "https://i.ibb.co/Lkg8WQv/qvrwpt1511181864.jpg",
+      url: "https://i.ibb.co/cv7G4fc/uquqtu1511178042.jpg",
     },
     {
       id: 5,
       rating: 4.5,
-      name: "Spicy Arrabiata Penne",
-      url: "https://i.ibb.co/94pV4pS/0jv5gx1661040802.jpg",
+      name: "Lasagne",
+      url: "https://i.ibb.co/sHWhQHY/wtsvxx1511296896.jpg",
     },
     {
       id: 6,
@@ -70,7 +70,7 @@ const Items = () => {
       {photos.map((photo) => (
         <div
           key={photo.id}
-          className="relative group overflow-hidden rounded-lg shadow-md"
+          className="relative group overflow-hidden rounded-lg shadow-md border-2 hover:border-yellow-400"
         >
           
           <img className="w-full" src={photo.url} alt={photo.name} />

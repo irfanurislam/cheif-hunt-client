@@ -46,8 +46,8 @@ const Navbar = () => {
               <Link className="mb-3" to="/">
                 Home
               </Link>
-              <Link className="mb-3" to="/applyjob">
-                Applied Jobs
+              <Link className="mb-3" to="/register">
+                Register
               </Link>
               <Link className="mb-3" to="/Blog">
                 Blog

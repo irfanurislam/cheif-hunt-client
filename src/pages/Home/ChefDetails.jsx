@@ -58,7 +58,7 @@ const ChefDetails = () => {
           <button onClick={() => {
                 toast("Favourite Items ❤️");
                 event.target.disabled = true;
-              }} className="btn btn-warning">Favourite</button>
+              }} className="btn btn-warning">Favourite </button>
         </td>
       </tr>
     ))}
