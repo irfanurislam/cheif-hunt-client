@@ -50,7 +50,12 @@ const ChefDetails = () => {
   <tbody>
     {recipes.map((recipe) => (
       <tr key={recipe.id}>
-        <td className="border px-4 py-2 text-lg font-medium">{recipe.recipe_name}</td>
+       <td className="border px-4 py-2">
+            <div className="flex items-center w-full">
+              <img src={recipe.photo} alt={recipe.recipe_name} className="w-12 h-16 rounded-md mr-4" />
+              <span>{recipe.recipe_name}</span>
+            </div>
+          </td>
         <td className="border px-4 py-2 font-normal">{recipe.ingredients.join(", ")}</td>
         <td className="whitespace-pre-wrap border px-4 py-2 font-normal ">{recipe.cooking_method}</td>
         <td className="border px-4 py-2 font-normal"><FaStar className="text-warning"></FaStar> {recipe.rating}</td>
