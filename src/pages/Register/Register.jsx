@@ -3,16 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Register = () => {
-  const { createUser,logOut } = useContext(AuthContext);
+  const { createUser, logOut } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const navigate = useNavigate()
-//   const location = useLocation()
-  
-//  const from = location.state?.from?.pathname || '/'
+  const navigate = useNavigate();
+  //   const location = useLocation()
 
-
+  //  const from = location.state?.from?.pathname || '/'
 
   const handleregister = (event) => {
     event.preventDefault();
@@ -23,9 +21,17 @@ const Register = () => {
     const password = form.password.value;
     setError("");
     setSuccess("");
-     if (password.length < 6) {
-      return setError("password mustbe 6 character");
+      
+    if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(gmail)+(?:\.com)*$/.test(email)){
+      setError('please valid email ')
+      return
     }
+     if (password.length < 6) {
+     setError("password mustbe 6 character"); 
+     return 
+    } 
+    
+    
 
     console.log(name, photo, email, password);
     createUser(email, password)
@@ -34,11 +40,12 @@ const Register = () => {
         console.log(createdUser);
 
         updateUser(result?.user, name, photo);
-        
+
         setSuccess("successfully login");
-        logOut()
+        logOut();
+        setError('')
         form.reset();
-        navigate('/login')
+        navigate("/login");
       })
       .catch((error) => {
         // console.log(error);
@@ -86,7 +93,7 @@ const Register = () => {
                 <span className="label-text">Photo</span>
               </label>
               <input
-                type="text"
+                type="url"
                 required
                 name="photo"
                 placeholder="Photo url"
@@ -132,8 +139,11 @@ const Register = () => {
 
             <p>
               <small>already Have a account</small>
-              <Link to="/login" className="link link-error ml-2 hover:text-blue-700">
-                 Login
+              <Link
+                to="/login"
+                className="link link-error ml-2 hover:text-blue-700"
+              >
+                Login
               </Link>
             </p>
           </form>
