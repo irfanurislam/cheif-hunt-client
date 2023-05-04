@@ -1,13 +1,36 @@
 import React from "react";
 import Pdf from "react-to-pdf";
 import { HiOutlineFolderDownload } from "react-icons/hi";
+import { useState } from "react";
+import { useEffect } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 const ref = React.createRef();
 const Blog = () => {
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+
+
+
+
+
   //question parts
   return (
     <div className="mb-20">
-      <div ref={ref} className="px-8">
+    {loading ? 
+    <div className="text-center">
+    <ClipLoader  color={"#cf1515"} loading={loading} size={50} /></div>
+    :<>
+    <div ref={ref} className="px-8">
         <div className="mt-5 card border-none w-50 bg-base-100">
           <div className="card-body text-lg text-[#111111]">
             <div className="text-[#111111] my-5">
@@ -71,6 +94,11 @@ const Blog = () => {
           )}
         </Pdf>
       </div>
+      </>
+    
+    }
+
+      
     </div>
   );
 };
