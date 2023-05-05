@@ -6,6 +6,7 @@ import Reviewer from "./Reviewer";
 import { useState } from "react";
 import { useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
+import BookTable from "./BookTable";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="px-8">
+    <div className="">
       {loading ? ( <div className="text-center">
         <ClipLoader  color={"#cf1515"} loading={loading} size={50} /></div>
       ) : (
@@ -27,6 +28,7 @@ const Home = () => {
           <Chefs></Chefs>
           <Items></Items>
           <Reviewer></Reviewer>
+          <BookTable></BookTable>
         </>
       )}
     </div>

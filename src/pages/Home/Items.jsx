@@ -61,7 +61,7 @@ const Items = () => {
 
 
   return (
-    <div className="my-28">
+    <div className="my-28 px-8">
         <div className="text-center mt-28 mb-14">
         <h2 className="text-2xl font-bold mb-4">The Food Heaven</h2>
         <p className="text-xl">Exprimentation in a kitchen and Focus on excellence are among our main driving forces in cooking </p>

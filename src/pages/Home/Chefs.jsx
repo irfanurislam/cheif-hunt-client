@@ -19,7 +19,7 @@ const Chefs = () => {
   }, []);
 
   return (
-    <div className="my-28 ">
+    <div className="my-28 px-8">
       {loading ? (
         <div className="text-center">
             <ClipLoader color={"#cf1515"} loading={loading} size={50} />

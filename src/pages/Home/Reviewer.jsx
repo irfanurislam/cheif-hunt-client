@@ -77,7 +77,7 @@ const Reviewer = () => {
 
 
   return (
-    <div className="my-28">
+    <div className="mt-28 px-8">
        <div className="text-center">
        <h2 className="text-2xl font-bold mb-8">
         {recipes.length} Items | Top Reviewer: {topReviewer.topCommenter}

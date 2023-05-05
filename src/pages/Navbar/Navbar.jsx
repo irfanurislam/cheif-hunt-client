@@ -20,7 +20,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="md:px-12">
+    <nav className="md:px-12 ">
       <div className="navbar bg-base-100 py-10">
         <div className="navbar-start">
           <div className="dropdown">

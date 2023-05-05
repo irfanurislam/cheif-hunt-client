@@ -3,7 +3,7 @@ import LazyLoad from "react-lazy-load";
 
 const Banner = () => {
   return (
-    <div className="my-10">
+    <div className="my-10 px-6 md:px-8">
       <LazyLoad>
       <div
         className="hero h-[36rem]"
