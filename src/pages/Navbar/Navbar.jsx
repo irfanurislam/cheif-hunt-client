@@ -87,7 +87,7 @@ const Navbar = () => {
               {/* <div className="flex items-center"> title={user.displayName}*/}
               <div className="" >
                 <img className="w-16 rounded-full" src={user?.photoURL} alt="Profile"
-                data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}
+                data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName ||'Unknown User'}
                  />
                  <Tooltip id="my-tooltip" />
                 {/* {user.displayName && <span className="absolute top-full left-1/2 transform -translate-x-1/2 font-medium  text-black  rounded-md opacity-0 transition-opacity duration-200 hover:opacity-100">{user.displayName}</span>} */}
