@@ -8,7 +8,7 @@ const BookTable = () => {
           <h1 className="text-lg font-semibold text-[#c9ab81] mb-4">Reservation</h1>
           <h2 className="text-4xl text-center font-medium text-[#c9ab81] mb-14">BOOK A TABLE</h2>
           <div className="flex flex-col md:flex-row">
-          <input type="text" placeholder="Person" className="input w-full max-w-xs mb-4 md:mr-4 md:mb-0" />
+          <input type="text" placeholder="Person number" className="input w-full max-w-xs mb-4 md:mr-4 md:mb-0" />
 
             <input type="text" placeholder="Date" className="input w-full max-w-xs" />
           </div>

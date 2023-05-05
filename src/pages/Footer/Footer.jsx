@@ -12,12 +12,12 @@ function Footer() {
             <p className="text-gray-400">Delizios is a brand that brings together some of the world's most talented Italian chefs and their best recipes. Our mission is to create delicious meals that bring people together.</p>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-2">Our Italian Chefs</h2>
-            <ul>
-              <li className="mb-1">Antonio Rossi</li>
-              <li className="mb-1">Francesca Bianchi</li>
-              <li className="mb-1">Giovanni Ricci</li>
-              <li className="mb-1">Maria Greco</li>
+            <h2 className="text-xl font-bold mb-2">Our SERVICES</h2>
+            <ul className='text-gray-400'>
+              <li className="mb-1">Chefs Courses</li>
+              <li className="mb-1">Our Menu</li>
+              <li className="mb-1">Reservation</li>
+              <li className="mb-1">Our Tips & specialites</li>
             </ul>
           </div>
           <div>

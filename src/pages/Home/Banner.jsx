@@ -19,7 +19,7 @@ const Banner = () => {
             <p className="mb-5">
               We Have Proper Passion for the Cookies. Love  is the secret ingradient thats makes  all our meals Test better and Magical 
             </p>
-            <button className="btn btn-warning">Get Started</button>
+            <button className="btn btn-warning">View More</button>
           </div>
         </div>
       </div>
